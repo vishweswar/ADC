@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/vishwa/ADC
+vclockGenerator
+Z1 !s110 1683743420
+!i10b 1
+!s100 jcbA3m4ZmN>B4FbNDg@3?2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I3AoBb243W5YAbO2HQKAE10
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1683743213
+Z5 8signalCaptureBlock.v
+Z6 FsignalCaptureBlock.v
+!i122 14
+L0 21 13
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1683743420.000000
+!s107 signalCaptureBlock.v|
+Z9 !s90 -reportprogress|300|signalCaptureBlock.v|
+!i113 1
+Z10 tCvgOpt 0
+nclock@generator
+vsignalCaptureBlock
+R1
+!i10b 1
+!s100 @fEOoIi3XU`L0ilDz8<X60
+R2
+ITk`dcCD8jk6RH`71:ShoR3
+R3
+R0
+R4
+R5
+R6
+!i122 14
+L0 3 14
+R7
+r1
+!s85 0
+31
+R8
+Z11 !s107 signalCaptureBlock.v|
+R9
+!i113 1
+R10
+nsignal@capture@block

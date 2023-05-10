@@ -1,0 +1,272 @@
+pwd
+# /home/vishwa/ADC
+do wave.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# Errors: 1, Warnings: 0
+# ** Error: /home/vishwa/intelFPGA/20.1/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./wave.do line 2
+# /home/vishwa/intelFPGA/20.1/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -novopt  signalCaptureBlock.v"
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:04:55 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:04:55 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:04:55 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+# Invalid binary digit: 2.
+# ** UI-Msg: (vsim-4011) Invalid force value: 0 0ns, 1 10ns, 20ns.
+# Error in macro ./wave.do line 12
+# Invalid binary digit: 2.
+# ** UI-Msg: (vsim-4011) Invalid force value: 0 0ns, 1 10ns, 20ns.
+# 
+#     while executing
+# "force {CLOCK_50} 0 0ns, 1 10ns, 20ns"
+# WARNING: No extended dataflow license exists
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:11:10 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:11:10 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:11:11 on May 10,2023, Elapsed time: 0:06:16
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:11:11 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 10 ns ###############
+#       Signal: /signalCaptureBlock/invertedClk @ sub-iteration 0 at Value St1 (signalCaptureBlock.v:11)
+#       Signal: /signalCaptureBlock/invertedClk @ sub-iteration 2 at Value St0 (signalCaptureBlock.v:11)
+#       Signal: /signalCaptureBlock/invertedClk @ sub-iteration 4 at Value St1 (signalCaptureBlock.v:11)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 10 ns.
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:12:34 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:12:34 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:12:34 on May 10,2023, Elapsed time: 0:01:23
+# Errors: 1, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:12:34 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 10 ns ###############
+#       Signal: /signalCaptureBlock/invertedClk @ sub-iteration 0 at Value St1 (signalCaptureBlock.v:11)
+#       Signal: /signalCaptureBlock/invertedClk @ sub-iteration 2 at Value St0 (signalCaptureBlock.v:11)
+#       Signal: /signalCaptureBlock/invertedClk @ sub-iteration 4 at Value St1 (signalCaptureBlock.v:11)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 10 ns.
+# A time value could not be extracted from the current line
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:13:49 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:13:49 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:13:49 on May 10,2023, Elapsed time: 0:01:15
+# Errors: 1, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:13:49 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+# A time value could not be extracted from the current line
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:14:53 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:14:53 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:14:54 on May 10,2023, Elapsed time: 0:01:05
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:14:54 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:17:10 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:17:10 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:17:10 on May 10,2023, Elapsed time: 0:02:16
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:17:10 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:18:29 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:18:29 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:18:29 on May 10,2023, Elapsed time: 0:01:19
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:18:29 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:19:18 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:19:19 on May 10,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 14:19:19 on May 10,2023, Elapsed time: 0:00:50
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:19:19 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+# A time value could not be extracted from the current line
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:21:08 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:21:08 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:21:08 on May 10,2023, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:21:08 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:22:37 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# 	clockGenerator
+# End time: 14:22:37 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:22:37 on May 10,2023, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:22:37 on May 10,2023
+# Loading work.signalCaptureBlock
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:24:26 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# 	clockGenerator
+# End time: 14:24:26 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:24:26 on May 10,2023, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:24:26 on May 10,2023
+# Loading work.signalCaptureBlock
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:26:57 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:26:57 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:26:57 on May 10,2023, Elapsed time: 0:02:31
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:26:57 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+quit -sim
+# End time: 14:27:28 on May 10,2023, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 0
+do wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:27:32 on May 10,2023
+# vlog -reportprogress 300 signalCaptureBlock.v 
+# -- Compiling module signalCaptureBlock
+# -- Compiling module clockGenerator
+# 
+# Top level modules:
+# 	signalCaptureBlock
+# End time: 14:27:32 on May 10,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim signalCaptureBlock 
+# Start time: 14:27:32 on May 10,2023
+# Loading work.signalCaptureBlock
+# Loading work.clockGenerator
+# End time: 14:27:47 on May 10,2023, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 0
