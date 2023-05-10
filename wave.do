@@ -5,7 +5,7 @@ vsim signalCaptureBlock
 log {/*}
 add wave {/*}
 
-
+force {resetN} 1
 force {clkCounterEn} 0
 run 10ns
 
