@@ -1,31 +1,46 @@
-module signalCaptureBlock(CLOCK_50); 
+`timescale 1ns/1ps  
 
+module signalCaptureBlock(CLOCK_50, clkCounterEn); 
+  
+  parameter clockPeriodNS = 50; 
+  parameter clockCounterSize = $clog2(clockPeriodNS/10); 
+  
 
   input CLOCK_50; 
-  
-  
+  input clkCounterEn; 
+	
   wire CLOCK_50; 
   wire clkCounterEn; 
-  wire invertedClk; 
-  wire SCLK; 
+  wire [clockCounterSize - 1: 0] SCLK; 
+  wire resetN; 
   
-  clockGenerator C1 (.fastClk(CLOCK_50), .fastClk_N(invertedClk), .SCLK(SCLK), .clkCounterEn(clkCounterEn));
+  
+  clockGenerator #(.clockCounterSize(clockCounterSize)) C1 (.fastClk(CLOCK_50), .SCLK(SCLK), .clkCounterEn(clkCounterEn), .resetN(resetN));
   
 endmodule 
 
 
+module clockGenerator #(parameter clockCounterSize = 3)(fastClk, SCLK, clkCounterEn, resetN); 
 
+	//clock generator to generate 1/clockPeriodNS MHz from 50MHz
+	//the clockPeriodNS in module instantiation needs to be a multiple of 10 for accuracy  
+	
+	parameter binCCS = {clockCounterSize{1'b1}};
 
-module clockGenerator(fastClk, fastClk_N, SCLK, clkCounterEn); //clock generator to generate 20MHz from 50MHz
-
-	input fastClk;
+        input fastClk;
 	input clkCounterEn;
-   output SCLK; 
+	input resetN; 
+   	output SCLK; 
+	
+	reg [clockCounterSize:0] SCLK;    
+	
+	always @ (fastClk) begin 
 
-	output wire fastClk_N; 
-	reg SCLK; 
-
-		
-	assign fastClk_N = (clkCounterEn == 1)?(~fastClk_N):1'b0; //inverted fastClock
+	 if(!resetN | SCLK == binCCS)
+		SCLK <= 0; 
+	 else  
+	   SCLK <= SCLK + 1'b1;
+	 
+	end 
 	
 endmodule 
