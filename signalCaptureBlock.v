@@ -18,18 +18,17 @@ module signalCaptureBlock(CLOCK_50, clkCounterEn);
   wire resetN; 
   
   
-  clockGenerator #(.clockCounterSize(clockCounterSize)) C1 (.fastClk(CLOCK_50), .SCLK(SCLK), .clkCounterEn(clkCounterEn), .resetN(resetN), .sclkCounter(sclkCounter));
+  clockGenerator #(.clockCounterSize(clockCounterSize), .cycleCountMax(cycleCountMax)) C1 (.fastClk(CLOCK_50), .SCLK(SCLK), .clkCounterEn(clkCounterEn), .resetN(resetN), .sclkCounter(sclkCounter));
   
 endmodule 
 
 
-module clockGenerator #(parameter clockCounterSize = 2)(fastClk, SCLK, clkCounterEn, resetN, sclkCounter); 
+module clockGenerator #(parameter clockCounterSize = 2, parameter cycleCountMax = 3)(fastClk, SCLK, clkCounterEn, resetN, sclkCounter); 
 
 	//clock generator to generate 1/clockPeriodNS MHz from 50MHz	
 
-	parameter fullCycles = {clockCounterSize{1'b1}};
-	parameter fullCyclesBin = fullCycles - 1'b1; 
-	parameter halfCycles = $ceil(fullCycles/2); 
+	parameter fullCycles = cycleCountMax - 1;
+	parameter halfCycles = $ceil(cycleCountMax/2); 
 
    input fastClk;
 	input clkCounterEn;
@@ -46,13 +45,11 @@ module clockGenerator #(parameter clockCounterSize = 2)(fastClk, SCLK, clkCounte
 	
 	always @ (posedge fastClk) begin    
 		if(clkCounterEn == 1'b1) begin 	
-			 if(!resetN | sclkCounter == fullCyclesBin) 
+			 if(!resetN | sclkCounter == fullCycles) 
 				sclkCounter <= 0; 
 			 else 
 				sclkCounter <= sclkCounter + 1'b1; 
 			end  
 	end 
-	
-	
 	
 endmodule 

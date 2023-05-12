@@ -1,5 +1,5 @@
 vlib work 
-vlog signalCaptureBlock.v
+vlog signalCaptureBlock.sv
 vsim signalCaptureBlock
 
 log {/*}
