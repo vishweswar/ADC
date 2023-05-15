@@ -9,51 +9,78 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/vishwa/ADC
-vclockGenerator
-DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1683923317
+vclockCounter
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1684183876
 !i10b 1
-!s100 nLOB_BIcXD97gS4Mmf1:73
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I;lXJd92>_K6SS8E3[N:jh0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 T`Nde6MbJ@lRAFcGH_iOE3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ioki]CKD6FASngY;bhga[H2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1683923312
-8signalCaptureBlock.sv
-FsignalCaptureBlock.sv
-!i122 116
-L0 27 30
-Z3 OV;L;2020.1;71
+Z5 w1684183864
+Z6 8signalCaptureBlock.sv
+Z7 FsignalCaptureBlock.sv
+!i122 129
+L0 47 21
+Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1683923317.000000
+Z9 !s108 1684183876.000000
 !s107 signalCaptureBlock.sv|
-!s90 -reportprogress|300|signalCaptureBlock.sv|
+Z10 !s90 -reportprogress|300|signalCaptureBlock.sv|
 !i113 1
-Z4 tCvgOpt 0
+Z11 tCvgOpt 0
+nclock@counter
+vclockGenerator
+R1
+R2
+!i10b 1
+!s100 ==YNVzB^E0_7eFl5UFnNM0
+R3
+I>[PgN4;zcFG<8FV0o:f=o1
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 129
+L0 70 27
+R8
+r1
+!s85 0
+31
+R9
+Z12 !s107 signalCaptureBlock.sv|
+R10
+!i113 1
+R11
 nclock@generator
 vsignalCaptureBlock
-!s110 1683923006
-!i10b 1
-!s100 @AbTNaK5?i;Ng`DR><j<21
 R1
-IilIbV]E<VgB8FVE=Xec7V0
 R2
-R0
-w1683903349
-8signalCaptureBlock.v
-FsignalCaptureBlock.v
-!i122 113
-L0 3 21
+!i10b 1
+!s100 AX[fQ@Xag=K9X?[o8M@H03
 R3
+IbVNiS6KciCAa3k;^6`b0=3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 129
+L0 4 41
+R8
 r1
 !s85 0
 31
-!s108 1683923006.000000
-!s107 signalCaptureBlock.v|
-!s90 -reportprogress|300|signalCaptureBlock.v|
+R9
+R12
+R10
 !i113 1
-R4
+R11
 nsignal@capture@block
