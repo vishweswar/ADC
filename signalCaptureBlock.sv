@@ -12,11 +12,7 @@ module signalCaptureBlock(CLOCK_50, GPIO_0, SW);
   //*******************************************************************************
   
   //**************************CLOCKGENERATOR PARAMETERS**************************** 
-<<<<<<< HEAD
-  parameter integer overFlow = 19;              //cycles for the bitpattern	
-=======
   parameter integer overFlow = 16;              //cycles for the bitpattern	
->>>>>>> 0ade061 (DIN Bits Firing as intended)
   parameter integer counterWidth = 5; 	         //ceil(log2(overFlow))   	
   //*******************************************************************************
 
@@ -32,10 +28,6 @@ module signalCaptureBlock(CLOCK_50, GPIO_0, SW);
   
   assign resetN = (SW[1] == 1'b1)?1'b1:1'b0; 
   assign Enable = (SW[0] == 1'b1)?1'b1:1'b0; 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0ade061 (DIN Bits Firing as intended)
   
   wire SCLK; 
   
@@ -49,12 +41,6 @@ module signalCaptureBlock(CLOCK_50, GPIO_0, SW);
   clockCounter #(.counterWidth(counterWidth), .overFlow(overFlow)) CC1 (.SCLK(SCLK), .counterValue(bitCounter), .resetN(resetN), .clockCounterEn(Enable)); 
   //*******************************************************************************  
   
-<<<<<<< HEAD
-endmodule 
-
-
-module clockCounter #(parameter integer counterWidth = 5, parameter integer overFlow = 19)(SCLK, counterValue, resetN, clockCounterEn); 
-=======
   //*************************DINLogic**********************************************
   wire DIN; 
   wire CSN; 
@@ -173,7 +159,6 @@ module DINLogic(channelSelect, counterValue, Enable, resetN, SCLK, CSN, DIN);
 endmodule  
 
 module clockCounter #(parameter integer counterWidth = 5, parameter integer overFlow = 17)(SCLK, counterValue, resetN, clockCounterEn); 
->>>>>>> 0ade061 (DIN Bits Firing as intended)
 
 	//clockCounter counts the SCLK and stores the value in CounterValue
 	
@@ -184,11 +169,10 @@ module clockCounter #(parameter integer counterWidth = 5, parameter integer over
 	
 	reg [counterWidth - 1: 0] counterValue; 
 	
-<<<<<<< HEAD
-	always @ (posedge SCLK or resetN) begin 		
-=======
+
+	
+
 	always @ (negedge SCLK) begin 		
->>>>>>> 0ade061 (DIN Bits Firing as intended)
 		if(clockCounterEn == 1'b1) begin 
 			if(!resetN || counterValue == overFlow) 
 				counterValue <= 0; 
@@ -215,11 +199,8 @@ module clockGenerator #(parameter integer clockCounterSize = 4, parameter intege
 	wire SCLK; 
    reg [clockCounterSize - 1:0] sclkCounter;    
 	
-<<<<<<< HEAD
-	assign SCLK = (sclkCounter < halfCycles)? 1'b0 : 1'b1;  
-=======
+
 	assign SCLK = (sclkCounter >= halfCycles)? 1'b1 : 1'b0;  
->>>>>>> 0ade061 (DIN Bits Firing as intended)
 	
 	always @ (posedge fastClk) begin    
 		if(clkGenEn == 1'b1) begin 	
@@ -232,8 +213,3 @@ module clockGenerator #(parameter integer clockCounterSize = 4, parameter intege
 	
 endmodule 
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 0ade061 (DIN Bits Firing as intended)
