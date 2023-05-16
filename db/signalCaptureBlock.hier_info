@@ -1,0 +1,101 @@
+|signalCaptureBlock
+CLOCK_50 => CLOCK_50.IN1
+GPIO_0[0] <> GPIO_0[0]
+GPIO_0[1] <> GPIO_0[1]
+GPIO_0[2] <> GPIO_0[2]
+GPIO_0[3] <> <UNC>
+GPIO_0[4] <> <UNC>
+GPIO_0[5] <> <UNC>
+GPIO_0[6] <> <UNC>
+GPIO_0[7] <> <UNC>
+GPIO_0[8] <> <UNC>
+GPIO_0[9] <> <UNC>
+GPIO_0[10] <> <UNC>
+GPIO_0[11] <> <UNC>
+GPIO_0[12] <> <UNC>
+GPIO_0[13] <> <UNC>
+GPIO_0[14] <> <UNC>
+GPIO_0[15] <> <UNC>
+GPIO_0[16] <> <UNC>
+GPIO_0[17] <> <UNC>
+GPIO_0[18] <> <UNC>
+GPIO_0[19] <> <UNC>
+GPIO_0[20] <> <UNC>
+GPIO_0[21] <> <UNC>
+GPIO_0[22] <> <UNC>
+GPIO_0[23] <> <UNC>
+GPIO_0[24] <> <UNC>
+GPIO_0[25] <> <UNC>
+GPIO_0[26] <> <UNC>
+GPIO_0[27] <> <UNC>
+GPIO_0[28] <> <UNC>
+GPIO_0[29] <> <UNC>
+GPIO_0[30] <> <UNC>
+GPIO_0[31] <> <UNC>
+GPIO_0[32] <> <UNC>
+GPIO_0[33] <> <UNC>
+GPIO_0[34] <> <UNC>
+GPIO_0[35] <> <UNC>
+SW[0] => Enable.IN3
+SW[1] => resetN.IN3
+SW[2] => channelSelect[0].IN1
+SW[3] => channelSelect[1].IN1
+SW[4] => channelSelect[2].IN1
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+
+
+|signalCaptureBlock|clockGenerator:CG1
+fastClk => sclkCounter[0]~reg0.CLK
+fastClk => sclkCounter[1]~reg0.CLK
+SCLK <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+clkGenEn => sclkCounter[0]~reg0.ENA
+clkGenEn => sclkCounter[1]~reg0.ENA
+resetN => always0.IN1
+sclkCounter[0] <= sclkCounter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sclkCounter[1] <= sclkCounter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|signalCaptureBlock|clockCounter:CC1
+SCLK => counterValue[0]~reg0.CLK
+SCLK => counterValue[1]~reg0.CLK
+SCLK => counterValue[2]~reg0.CLK
+SCLK => counterValue[3]~reg0.CLK
+SCLK => counterValue[4]~reg0.CLK
+counterValue[0] <= counterValue[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counterValue[1] <= counterValue[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counterValue[2] <= counterValue[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counterValue[3] <= counterValue[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counterValue[4] <= counterValue[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resetN => always0.IN1
+clockCounterEn => counterValue[0]~reg0.ENA
+clockCounterEn => counterValue[1]~reg0.ENA
+clockCounterEn => counterValue[2]~reg0.ENA
+clockCounterEn => counterValue[3]~reg0.ENA
+clockCounterEn => counterValue[4]~reg0.ENA
+
+
+|signalCaptureBlock|DINLogic:DIN1
+channelSelect[0] => Selector0.IN9
+channelSelect[1] => Selector0.IN8
+channelSelect[2] => Selector0.IN7
+counterValue[0] => Decoder0.IN4
+counterValue[0] => Equal0.IN1
+counterValue[1] => Decoder0.IN3
+counterValue[1] => Equal0.IN4
+counterValue[2] => Decoder0.IN2
+counterValue[2] => Equal0.IN3
+counterValue[3] => Decoder0.IN1
+counterValue[3] => Equal0.IN2
+counterValue[4] => Decoder0.IN0
+counterValue[4] => Equal0.IN0
+Enable => DIN~reg0.ENA
+resetN => always0.IN1
+SCLK => DIN~reg0.CLK
+CSN <= always0.DB_MAX_OUTPUT_PORT_TYPE
+DIN <= DIN~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.811
+TNS   : -5.603
+
+Type  : Slow 1100mV 85C Model Setup 'clockGenerator:CG1|sclkCounter[0]'
+Slack : -1.476
+TNS   : -7.711
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clockGenerator:CG1|sclkCounter[0]'
+Slack : 0.540
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clockGenerator:CG1|sclkCounter[0]'
+Slack : -0.394
+TNS   : -3.813
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -1.062
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.455
+TNS   : -4.880
+
+Type  : Slow 1100mV 0C Model Setup 'clockGenerator:CG1|sclkCounter[0]'
+Slack : -1.480
+TNS   : -7.649
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.047
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clockGenerator:CG1|sclkCounter[0]'
+Slack : 0.564
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clockGenerator:CG1|sclkCounter[0]'
+Slack : -0.394
+TNS   : -3.632
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -1.112
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.373
+TNS   : -4.468
+
+Type  : Fast 1100mV 85C Model Setup 'clockGenerator:CG1|sclkCounter[0]'
+Slack : -0.674
+TNS   : -2.553
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.224
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clockGenerator:CG1|sclkCounter[0]'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.089
+TNS   : -0.177
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clockGenerator:CG1|sclkCounter[0]'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -1.834
+TNS   : -3.450
+
+Type  : Fast 1100mV 0C Model Setup 'clockGenerator:CG1|sclkCounter[0]'
+Slack : -0.603
+TNS   : -2.109
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clockGenerator:CG1|sclkCounter[0]'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.088
+TNS   : -0.175
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clockGenerator:CG1|sclkCounter[0]'
+Slack : 0.111
+TNS   : 0.000
+
+------------------------------------------------------------
