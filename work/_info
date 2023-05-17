@@ -11,126 +11,150 @@ cModel Technology
 Z0 d/home/vishwa/ADC
 vclockCounter
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1684271161
+Z2 !s110 1684357553
 !i10b 1
-!s100 1Sj@JJ[=CkaGoFNz9hWMb0
+!s100 =Bi46Gc2RKDY?C?fCNcQD3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IeaII3?eBdQan2MU5_S>O`3
+IdIg2@bJ_TY?m:5A9lO5Y31
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1684271152
+Z5 w1684356846
 Z6 8signalCaptureBlock.sv
 Z7 FsignalCaptureBlock.sv
-!i122 156
-L0 161 24
+!i122 165
+L0 174 24
 Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1684271161.000000
-!s107 signalCaptureBlock.sv|
-Z10 !s90 -reportprogress|300|signalCaptureBlock.sv|
+Z9 !s108 1684357553.000000
+Z10 !s107 signalCaptureBlock.sv|
+Z11 !s90 -reportprogress|300|signalCaptureBlock.sv|
 !i113 1
-Z11 tCvgOpt 0
+Z12 tCvgOpt 0
 nclock@counter
 vclockGenerator
 R1
 R2
 !i10b 1
-!s100 K3[Y[Tc]3If;QBAPnZSK]0
+!s100 7T[6>TdogA2gCa>LK[aQm0
 R3
-IFzeD:bhGQd`834L6EH<oi1
+I;P3lzC[zkLXEbo[_nYL4=1
 R4
 S1
 R0
 R5
 R6
 R7
-!i122 156
-L0 187 28
+!i122 165
+L0 200 28
 R8
 r1
 !s85 0
 31
 R9
-Z12 !s107 signalCaptureBlock.sv|
 R10
-!i113 1
 R11
+!i113 1
+R12
 nclock@generator
 vDINLogic
 R1
 R2
 !i10b 1
-!s100 igK4NT?YaBiXR2fKWjCRE0
+!s100 InlAD60?YZ9ZbO2ESEXhN2
 R3
-INVKkGgWjDMGF@02Dm=I4E3
+I48]zR><co2V:YVFRAgH`A3
 R4
 S1
 R0
 R5
 R6
 R7
-!i122 156
-L0 112 48
+!i122 165
+L0 125 48
 R8
 r1
 !s85 0
 31
 R9
-R12
 R10
-!i113 1
 R11
+!i113 1
+R12
 n@d@i@n@logic
 vDOUTLogic
 R1
 R2
 !i10b 1
-!s100 ?WP[@AGKfP@iADGX=`^2G1
+!s100 AWHJjQ3_Q5QjCBaYGN;Di3
 R3
-I95@^>n>SUaK0_1[:edJ5M0
+IzfXC::ANPnDYeFoVL>Gni1
 R4
 S1
 R0
 R5
 R6
 R7
-!i122 156
-L0 62 49
+!i122 165
+L0 75 49
 R8
 r1
 !s85 0
 31
 R9
-R12
 R10
-!i113 1
 R11
+!i113 1
+R12
 n@d@o@u@t@logic
 vsignalCaptureBlock
 R1
 R2
 !i10b 1
-!s100 PbW4>46K_;bGL2=`^G]D@3
+!s100 ?1P?YNZc>eogF@8307]B72
 R3
-Ic_8nTmzMIN<JiEl68C2k60
+Iz4WGBbala2>gX@TXG2VJT1
 R4
 S1
 R0
 R5
 R6
 R7
-!i122 156
-L0 4 57
+!i122 165
+L0 4 70
 R8
 r1
 !s85 0
 31
 R9
-R12
 R10
-!i113 1
 R11
+!i113 1
+R12
 nsignal@capture@block
+vtestbench
+R1
+!s110 1684359970
+!i10b 1
+!s100 miDI3EZGlaeclFVmkG_;Q3
+R3
+ID^X]1P?gDFASP5Fb4?cYn3
+R4
+S1
+R0
+w1684359963
+8testbench.sv
+Ftestbench.sv
+!i122 182
+L0 3 73
+R8
+r1
+!s85 0
+31
+!s108 1684359970.000000
+!s107 testbench.sv|
+!s90 -reportprogress|300|testbench.sv|
+!i113 1
+R12

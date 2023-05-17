@@ -1,7 +1,7 @@
 `timescale 1ns/1ps  
 
 
-module signalCaptureBlock(CLOCK_50, GPIO_0, SW); 
+module signalCaptureBlock(CLOCK_50, SW, DOUT, DIN, Done, DOUTArr, GPIO_0, SCLK, CSN); 
   
   //**************************CLOCKGENERATOR PARAMETERS**************************** 
   parameter integer clockPeriodNS = 60; 	         //needs to be a multiple of 20ns 
@@ -17,15 +17,22 @@ module signalCaptureBlock(CLOCK_50, GPIO_0, SW);
   //*******************************************************************************
 
   input CLOCK_50;
-  input SW[9:0];  
-  inout [35:0] GPIO_0; 
+  input [9:0] SW;  //input for synthesis 
+  inout [35:0] GPIO_0; //inout for synthesis 
+  input DOUT; 
+  
+  output DIN;
+  output DOUTArr;    
+  output Done;
+  output SCLK; 
+  output CSN; 
   
  
   wire CLOCK_50; 
   wire resetN; 
   wire Enable; 
+	
 
-  
   assign resetN = (SW[1] == 1'b1)?1'b1:1'b0; 
   assign Enable = (SW[0] == 1'b1)?1'b1:1'b0; 
   
@@ -53,6 +60,12 @@ module signalCaptureBlock(CLOCK_50, GPIO_0, SW);
   DINLogic DIN1(.channelSelect(channelSelect), .counterValue(bitCounter), .Enable(Enable), .resetN(resetN), .SCLK(SCLK), .CSN(CSN), .DIN(DIN));
   //*******************************************************************************
   
+  //*************************DOUTLogic**********************************************
+  wire [15:0] DOUTArr; 
+  wire Done;   
+  DOUTLogic DOUT1(.SCLK(SCLK), .CSN(CSN), .DOUT(DOUT), .Enable(Enable), .counterValue(bitCounter), .resetN(resetN), .Done(Done), .DOUTArr(DOUTArr));
+  //********************************************************************************
+
   assign GPIO_0[0] = SCLK; 
   assign GPIO_0[1] = DIN; 
   assign GPIO_0[2] = CSN;
