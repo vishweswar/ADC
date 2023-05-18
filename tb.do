@@ -6,4 +6,4 @@ log {/*}
 add wave {/*} 
 
 force {CLOCK_50} 0,1 10ns -r 20ns
-run 3000ns
+run 6000ns

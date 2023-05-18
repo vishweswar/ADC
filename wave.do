@@ -13,10 +13,18 @@ force {channelSelect[2]} 1
 force {channelSelect[1]} 0
 force {channelSelect[0]} 0
 
+force {SCLKresetN} 1
+run 25ns
+
+force {SCLKresetN} 0
+run 50ns
+
+force {SCLKresetN} 1
+
 force {resetN} 1
 run 25ns
 
-force {resetN} 0 
+force {resetN} 0
 run 50ns
 
 force {resetN} 1

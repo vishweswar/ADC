@@ -1,7 +1,7 @@
 `timescale 1ns/1ps  
 
 
-module signalCaptureBlock(CLOCK_50, SW, DOUT, DIN, Done, DOUTArr, GPIO_0, SCLK, CSN); 
+module signalCaptureBlock(CLOCK_50, SW, DOUT, Drive, DIN, Done, DOUTArr, GPIO_0, SCLK, CSN); 
   
   //**************************CLOCKGENERATOR PARAMETERS**************************** 
   parameter integer clockPeriodNS = 60; 	         //needs to be a multiple of 20ns 
@@ -12,7 +12,7 @@ module signalCaptureBlock(CLOCK_50, SW, DOUT, DIN, Done, DOUTArr, GPIO_0, SCLK, 
   //*******************************************************************************
   
   //**************************CLOCKGENERATOR PARAMETERS**************************** 
-  parameter integer overFlow = 16;              //cycles for the bitpattern	
+  parameter integer overFlow = 17;              //cycles for the bitpattern	
   parameter integer counterWidth = 5; 	         //ceil(log2(overFlow))   	
   //*******************************************************************************
 
@@ -20,6 +20,7 @@ module signalCaptureBlock(CLOCK_50, SW, DOUT, DIN, Done, DOUTArr, GPIO_0, SCLK, 
   input [9:0] SW;  //input for synthesis 
   inout [35:0] GPIO_0; //inout for synthesis 
   input DOUT; 
+  input Drive;
   
   output DIN;
   output DOUTArr;    
@@ -28,11 +29,14 @@ module signalCaptureBlock(CLOCK_50, SW, DOUT, DIN, Done, DOUTArr, GPIO_0, SCLK, 
   output CSN; 
   
  
-  wire CLOCK_50; 
-  wire resetN; 
+  wire CLOCK_50;
+  wire SCLKresetN; 
+  wire resetN;  
   wire Enable; 
 	
 
+  assign SCLKresetN = (SW[9] == 1'b1)?1'b1:1'b0; 
+  
   assign resetN = (SW[1] == 1'b1)?1'b1:1'b0; 
   assign Enable = (SW[0] == 1'b1)?1'b1:1'b0; 
   
@@ -40,7 +44,7 @@ module signalCaptureBlock(CLOCK_50, SW, DOUT, DIN, Done, DOUTArr, GPIO_0, SCLK, 
   
   //*************************CLOCKGENERATOR OBJECT***********************************  
   wire [clockCounterSize - 1:0] sclkCounter;  
-  clockGenerator #(.clockCounterSize(clockCounterSize), .fullCycles(fullCycles), .halfCycles(halfCycles)) CG1 (.fastClk(CLOCK_50), .SCLK(SCLK), .clkGenEn(Enable), .resetN(resetN), .sclkCounter(sclkCounter));
+  clockGenerator #(.clockCounterSize(clockCounterSize), .fullCycles(fullCycles), .halfCycles(halfCycles)) CG1 (.fastClk(CLOCK_50), .SCLK(SCLK), .clkGenEn(Enable), .SCLKresetN(SCLKresetN), .sclkCounter(sclkCounter));
   //*********************************************************************************
 
   //*************************CLOCKCOUNTER OBJECT***********************************  
@@ -132,7 +136,7 @@ module DINLogic(channelSelect, counterValue, Enable, resetN, SCLK, CSN, DIN);
 	input Enable; 
 	input resetN; 
 	input SCLK; 
-
+	
 	output CSN; 
 	output DIN; 
 		
@@ -140,10 +144,10 @@ module DINLogic(channelSelect, counterValue, Enable, resetN, SCLK, CSN, DIN);
 	reg DIN; 
 		
 	
-	always @ (SCLK) begin 	
-		if(!resetN || counterValue == 5'd16)
+	always @ (posedge SCLK or resetN) begin 	
+		if(!resetN || counterValue == 17)
 			CSN <= 1'b1; 
-		else if(counterValue == 5'd1)
+		else if(counterValue == 5'd0 && resetN)
 			CSN <= 1'b0;
 		else 
 			CSN <= 1'b0; 
@@ -182,10 +186,7 @@ module clockCounter #(parameter integer counterWidth = 5, parameter integer over
 	
 	reg [counterWidth - 1: 0] counterValue; 
 	
-
-	
-
-	always @ (negedge SCLK) begin 		
+	always @ (negedge SCLK or resetN) begin 		
 		if(clockCounterEn == 1'b1) begin 
 			if(!resetN || counterValue == overFlow) 
 				counterValue <= 0; 
@@ -197,13 +198,13 @@ module clockCounter #(parameter integer counterWidth = 5, parameter integer over
 endmodule 
 
 
-module clockGenerator #(parameter integer clockCounterSize = 4, parameter integer fullCycles = 2, parameter integer halfCycles = 3)(fastClk, SCLK, clkGenEn, resetN, sclkCounter); 
+module clockGenerator #(parameter integer clockCounterSize = 4, parameter integer fullCycles = 2, parameter integer halfCycles = 3)(fastClk, SCLK, clkGenEn, SCLKresetN, sclkCounter); 
 
 	//clock generator to generate 1/clockPeriodNS MHz from 50MHz	
 
    input fastClk;
 	input clkGenEn;
-	input resetN; 
+	input SCLKresetN; 
 	
 	output sclkCounter; 
 	output SCLK; 
@@ -217,7 +218,7 @@ module clockGenerator #(parameter integer clockCounterSize = 4, parameter intege
 	
 	always @ (posedge fastClk) begin    
 		if(clkGenEn == 1'b1) begin 	
-			 if(!resetN || sclkCounter == fullCycles) 
+			 if(!SCLKresetN || sclkCounter == fullCycles) 
 				sclkCounter <= 0; 
 			 else 
 				sclkCounter <= sclkCounter + 1'b1; 
